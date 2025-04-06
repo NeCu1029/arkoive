@@ -1,0 +1,59 @@
+body {
+  text-align: center;
+}
+
+nav span {
+  font-size: 1.2rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  font-weight: bold;
+}
+
+hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.head {
+  font-size: 1.3rem;
+}
+
+.color-alpha {
+  font-weight: bold;
+  color: #990000;
+}
+
+.color-beta {
+  font-weight: bold;
+  color: #997300;
+}
+
+.color-gamma {
+  font-weight: bold;
+  color: #4d9900;
+}
+
+.color-delta {
+  font-weight: bold;
+  color: #009926;
+}
+
+.color-epsilon {
+  font-weight: bold;
+  color: #009999;
+}
+
+.color-zeta {
+  font-weight: bold;
+  color: #002699;
+}
+
+.color-eta {
+  font-weight: bold;
+  color: #4c0099;
+}
+
+.color-theta {
+  font-weight: bold;
+  color: #990073;
+}
