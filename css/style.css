@@ -57,3 +57,7 @@ hr {
   font-weight: bold;
   color: #990073;
 }
+
+.hidden {
+  display: none;
+}
