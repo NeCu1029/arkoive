@@ -14,6 +14,14 @@ hr {
   margin-bottom: 1.5rem;
 }
 
+a {
+  all: unset;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .head {
   font-size: 1.3rem;
 }
