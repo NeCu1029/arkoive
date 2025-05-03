@@ -5,7 +5,10 @@ const str = Math.random().toString(36).substring(2, 10);
 verifyStr.innerText = str;
 
 document.getElementById("verify-btn").addEventListener("click", () => {
-  fetch("http://localhost:4000/verify")
+  fetch("http://localhost:4000/verify", {
+    method: "POST",
+    body: JSON.stringify(userID.value),
+  })
     .then((response) => response.json())
     .then((data) => {
       let mes = data.message;
