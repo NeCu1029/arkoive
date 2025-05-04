@@ -1,8 +1,16 @@
+const verifyDiv = document.querySelector(".verify");
+const myDiv = document.querySelector(".my");
 const verifyStr = document.getElementById("verify-str");
 const userID = document.querySelector("input");
 const str = Math.random().toString(36).substring(2, 10);
 
 verifyStr.innerText = str;
+
+function verifySucceed() {
+  console.log("verification succeeded!");
+  verifyDiv.setAttribute("class", "hidden");
+  myDiv.removeAttribute("class", "hidden");
+}
 
 document.getElementById("verify-btn").addEventListener("click", () => {
   fetch("http://localhost:4000/verify", {
@@ -14,7 +22,7 @@ document.getElementById("verify-btn").addEventListener("click", () => {
       let mes = data.message;
       console.log(mes);
       if (mes == str) {
-        console.log("verification succeeded!");
+        verifySucceed();
       } else {
         console.log("verification failed.");
       }
