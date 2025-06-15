@@ -17,8 +17,7 @@ def verify():
     if page.status_code != 200:
         return jsonify(message="error occured")
     soup = BS(page.text, "html.parser")
-    print(soup)
-    text = soup.select_one("#gs13068").get_text()
+    text = soup.select_one("#gs13068").get_text()  # type: ignore
     res = text.split()[0]
 
     return jsonify(message=res)
