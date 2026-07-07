@@ -1,0 +1,128 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #000000;
+  padding: 0 0.8rem;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+
+header {
+  height: 8rem;
+  padding: 0 3rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #999999;
+}
+
+#title {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 0.125rem;
+}
+
+nav {
+  display: flex;
+  gap: 8rem;
+}
+
+.menu {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Main */
+
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 5rem;
+  padding: 4.375rem 3rem;
+  border-bottom: 1px solid #999999;
+}
+
+/* Profile */
+
+aside {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+#profile {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  border: 1px solid #999999;
+  background: #b9d9a7;
+}
+
+#username {
+  margin-top: 1.25rem;
+}
+
+/* Info Boxes */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.info {
+  flex: 1;
+  height: 13.75rem;
+  background: #4f78c4;
+  border-radius: 2.5rem;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#info-rate {
+  background: #8cb526;
+}
+
+#info-prob {
+  background: #c9ac1d;
+}
+
+.info span {
+  margin-left: 0.625rem;
+}
+
+/* Message */
+
+#msg {
+  margin-top: 2.5rem;
+  padding-top: 1.875rem;
+  border-top: 1px solid #999999;
+  display: block;
+}
+
+/* Footer */
+
+footer {
+  flex-shrink: 0;
+  padding: 2.5rem 3rem;
+  line-height: 1.4;
+}
