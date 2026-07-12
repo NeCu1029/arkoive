@@ -1,42 +1,17 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KOISTUDY의 문제 난이도와 유저 레이팅을 제공하는 서비스">
-    <meta name="keywords" content="KOISTUDY, 알고리즘, 문제해결, PS, ARKOIVE, arkoive">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>ARKOIVE</title>
-  </head>
-  <body>
-    <header>
-      <span id="title">ARKOIVE</span>
-      <nav>
-        <a class="menu" id="menu-prob">문제</a>
-        <a class="menu" id="menu-cont">기여</a>
-        <a class="menu" id="menu-rank">랭킹</a>
-        <a class="menu" id="menu-my">MY</a>
-      </nav>
-    </header>
-    <main>
-      <aside>
-        <img height="8rem" width="8rem" alt="프로필 이미지" id="profile" />
-        <span id="username">username</span>
-      </aside>
-      <div class="container">
-        <div class="info" id="info-rate">
-          레이팅 <span>0</span>
-        </div>
-        <div class="info" id="info-prob">
-          푼 문제 수 <span>0</span>
-        </div>
-      </div>
-      <span id="msg">오늘은 문제를 풀지 않았어요.</span>
-    </main>
-    <footer>
-      ARKOIVE
-      <br>
-      © 2026. necu1029 All rights reserved.
-    </footer>
-  </body>
-</html>
+{% extends 'base.html' %}
+{% block title %}홈{% endblock %}
+{% block main %}
+  <aside>
+    <img height="8rem" width="8rem" alt="프로필 이미지" id="profile" />
+    <span id="username">username</span>
+  </aside>
+  <div class="container">
+    <div class="info" id="info-rate">
+      레이팅 <span>0</span>
+    </div>
+    <div class="info" id="info-prob">
+      푼 문제 수 <span>0</span>
+    </div>
+  </div>
+  <span id="msg">오늘은 문제를 풀지 않았어요.</span>
+{% endblock %}

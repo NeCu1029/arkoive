@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}회원가입{% endblock %}
+{% block main %}
+  <p>계정 인증을 위해, KOISTUDY 계정에서 "이름"을 아래 주어진 10자리 문자열로 바꾼 뒤 버튼을 눌러 주세요.</p>
+  <p>입력한 아이디: {{ username }}</p>
+  <div>{{ code }}</div>
+  <form method="post">
+    <button type="submit">다음</button>
+  </form>
+{% endblock %}
