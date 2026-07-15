@@ -57,9 +57,9 @@ nav {
 main {
   flex: 1;
   display: grid;
-  grid-template-columns: 10rem 1fr;
+  grid-template-columns: 12.5rem 1fr;
   grid-template-rows: auto auto;
-  column-gap: 5rem;
+  column-gap: 2.5rem;
   padding: 4.375rem 3rem;
   border-bottom: 1px solid #999999;
 }
@@ -71,6 +71,8 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: left;
+  padding-right: 2.5rem;
+  border-right: 1px solid #999999;
 }
 
 #profile {
