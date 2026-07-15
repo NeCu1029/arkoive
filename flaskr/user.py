@@ -25,7 +25,7 @@ def register1():
         code.append(chr(randint(97, 122)))
 
     session["register_username"] = username
-    session["register_code"] = code
+    session["register_code"] = "".join(code)
     session["register_verified"] = False
     return redirect(url_for("user_bp.register2"))
 
@@ -37,6 +37,7 @@ def register2():
         return redirect(url_for("user_bp.register1"))
     username = session["register_username"]
     code = session["register_code"]
+    print(code)
 
     if request.method == "GET":
         return render_template("register2.html", username=username, code=code)
@@ -48,6 +49,7 @@ def register2():
         name = h1[h1.find("(") + 1 : -8]
     else:
         name = ""
+    print(name)
 
     if code == name:
         session["register_verified"] = True
@@ -62,7 +64,7 @@ def register3():
     if "register_username" not in session:
         flash("회원가입 세션이 만료되었습니다. 다시 시도하세요.")
         return redirect(url_for("user_bp.register1"))
-    if not session.get("verified"):
+    if not session.get("register_verified"):
         flash("계정 인증에 실패했습니다. 다시 시도하세요.")
         return redirect(url_for("user_bp.register2"))
 
@@ -78,7 +80,34 @@ def register3():
 
     session.pop("register_username", None)
     session.pop("register_code", None)
-    session.pop("verified", None)
+    session.pop("register_verified", None)
 
     flash("회원가입이 완료되었습니다.")
-    return redirect("/login")
+    return redirect(url_for("user_bp.login"))
+
+
+@user_bp.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return render_template("login.html")
+
+    username = request.form["username"]
+    user = User.query.filter_by(username=username).first()
+    if not user:
+        flash("아이디가 존재하지 않습니다. 다시 시도하세요.")
+        return redirect(url_for("user_bp.login"))
+
+    password = request.form["password"]
+    if bc.check_password_hash(user.password, password):
+        login_user(user)
+        return redirect(url_for("home"))
+    else:
+        flash("비밀번호가 일치하지 않습니다. 다시 시도하세요.")
+        return redirect(url_for("user_bp.login"))
+
+
+@user_bp.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("home"))

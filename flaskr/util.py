@@ -1,11 +1,12 @@
 # 잡다한 것들 저장
 
 from flask_bcrypt import Bcrypt
-from flask_login import UserMixin
+from flask_login import LoginManager, UserMixin
 from flask_sqlalchemy import SQLAlchemy
 
 bc = Bcrypt()
 db = SQLAlchemy()
+manager = LoginManager()
 
 
 class User(db.Model, UserMixin):

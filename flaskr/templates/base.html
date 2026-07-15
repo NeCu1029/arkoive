@@ -28,5 +28,9 @@
       <br>
       © 2026. necu1029 All rights reserved.
     </footer>
+    <script>
+      const flashes = JSON.parse('{{ get_flashed_messages() | tojson }}');
+      flashes.forEach(element => {console.log(element);});
+    </script>
   </body>
 </html>
