@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="KOISTUDY의 문제 난이도와 유저 레이팅을 제공하는 서비스">
     <meta name="keywords" content="KOISTUDY, 알고리즘, 문제해결, PS, ARKOIVE, arkoive">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
     <title>ARKOIVE -
       {% block title %}{% endblock %}
     </title>
@@ -17,7 +17,7 @@
         <a class="menu" id="menu-prob">문제</a>
         <a class="menu" id="menu-cont">기여</a>
         <a class="menu" id="menu-rank">랭킹</a>
-        <a class="menu" id="menu-my">MY</a>
+        <a class="menu" id="menu-my" href='{{ url_for("user_bp.my") }}'>MY</a>
       </nav>
     </header>
     <main>

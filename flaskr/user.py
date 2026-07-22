@@ -1,7 +1,7 @@
 # 회원가입, 로그인, 마이 페이지
 
 from flask import Blueprint, flash, render_template, redirect, request, session, url_for
-from flask_login import login_user, login_required, logout_user
+from flask_login import current_user, login_user, login_required, logout_user
 from bs4 import BeautifulSoup
 from random import randint
 import requests
@@ -111,3 +111,10 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for("home"))
+
+
+@user_bp.route("/my")
+@login_required
+def my():
+    username = current_user.username
+    return render_template("my.html", username=username)
