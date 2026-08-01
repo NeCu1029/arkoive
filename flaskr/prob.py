@@ -13,4 +13,5 @@ def problems():
         page = 1
 
     problems = Prob.query.order_by(Prob.id).offset((page - 1) * 25).limit(25).all()
-    return render_template("problems.html", probs=problems)
+    output = [(prob.id, prob.title, "%.2f" % prob.diff) for prob in problems]
+    return render_template("problems.html", probs=output)

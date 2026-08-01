@@ -18,4 +18,12 @@ class User(db.Model, UserMixin):
 class Prob(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(512), unique=False, nullable=False)
-    diff = db.Column(db.Integer, unique=False, nullable=True)
+    diff = db.Column(db.Float, unique=False, nullable=False)
+    vote_cnt = db.Column(db.Integer, unique=False, nullable=False)
+
+
+class Solve(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, unique=False, nullable=False)
+    prob_id = db.Column(db.Integer, unique=False, nullable=False)
+    vote = db.Column(db.Integer, unique=False, nullable=False)

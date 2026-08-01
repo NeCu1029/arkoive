@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}회원가입{% endblock %}
+{% block main %}
+  <h1>문제</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>제목</th>
+        <th>난이도</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for prob in probs %}
+        <tr>
+          {% for i in prob %}
+            <td>{{ i }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
