@@ -14,7 +14,7 @@
     <header>
       <a href='{{ url_for("home") }}' id="title">ARKOIVE</a>
       <nav>
-        <a class="menu" id="menu-prob">문제</a>
+        <a class="menu" id="menu-prob" href='{{ url_for("prob_bp.problems") }}'>문제</a>
         <a class="menu" id="menu-cont">기여</a>
         <a class="menu" id="menu-rank">랭킹</a>
         <a class="menu" id="menu-my" href='{{ url_for("user_bp.my") }}'>MY</a>
